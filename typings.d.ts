@@ -112,14 +112,14 @@ interface ModApi {
      * Injects a new stylesheet, can be used to change the hud style or support new elements
      * @param css 
      */
-    injectCss(css);
+    injectCss(css): void;
 
 
     /**
      * 
      * @param mod 
      */
-    registerMod(mod: ModInstance);
+    registerMod(mod: ModInstance): void;
 
 }
 
@@ -141,7 +141,7 @@ interface ModInstance {
      * Draw stuff above buildings, world space.
      */
     draw(params: DrawParameters);
-    
+
     /**
      * Draw screen overlays, this is screen space (0, 0) to (window.innerWidth, window.innerHeight)
      */
@@ -155,8 +155,17 @@ interface ModInstance {
  */
 interface ModMainFunction {
 
+    name: string;
+    version: string;
+    author: string;
+
     /**
      * Should instantiate the mod and return a promise when its done
      */
     (api: ModApi): Promise<boolean>;
+}
+
+
+interface Window {
+    registerMod(ModMainFunction): void;
 }
