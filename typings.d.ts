@@ -94,6 +94,75 @@ interface DrawParameters {
     zoomFactor: number;
 }
 
+
+/**
+ * @see https://docs.yorg.app/classes/faction.html
+ */
+interface BaseFaction {
+}
+
+/**
+ * @see https://docs.yorg.app/classes/component.html
+ */
+interface Component {
+
+}
+
+/**
+ * @see https://docs.yorg.app/classes/entitycomponentstorage.html
+ */
+interface EntityComponentStorage {
+}
+
+
+
+/**
+ * @see https://docs.yorg.app/classes/entity.html
+ */
+interface Entity {
+    x: number;
+    y: number;
+    uid: number;
+    root: GameRoot;
+    faction: BaseFaction;
+    meta: any;
+    components: EntityComponentStorage;
+    registered: boolean;
+    destroyed: boolean;
+    queuedForDestroy: boolean;
+    destroyReason: string;
+
+    getFactionId(): string;
+    isAlive(): boolean;
+    getMetaclass(): any;
+
+    getTile(): Vector;
+    getWorldPosition(): Vector;
+
+    // For more properties and methods, see api docs
+}
+
+
+/**
+ * @see https://docs.yorg.app/classes/entitymanager.html
+ */
+interface EntityManager {
+
+    findByUid(uid: number, errorWhenNotFound?: boolean): Entity;
+    getAllWithComponent(componentHandle: new () => Component): Array<Entity>;
+    getAllWithComponentOfFaction(componentHandle: new () => Component, faction: BaseFaction): Array<Entity>;
+
+    // For more properties and methods, see api docs
+}
+
+
+/**
+ * Game root interface
+ */
+interface GameRoot {
+    entityMgr: EntityManager;
+}
+
 /**
  * This is passed to all mods
  */
@@ -119,7 +188,7 @@ interface ModApi {
      * 
      * @param mod 
      */
-    registerMod(mod: ModInstance): void;
+    registerMod(mod: (root: GameRoot) => ModInstance): void;
 
 }
 
@@ -128,7 +197,6 @@ interface ModApi {
  * so you can store game-state related stuff here
  */
 interface ModInstance {
-
 
 
     /**
