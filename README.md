@@ -16,6 +16,8 @@ You can then start by modifying the `mod.js` to your needs.
 
 While there is very basic API documentation, I **strongly** recommend to join the official discord (http://discord.yorg3.io) and get in contact with me (`tobspr#5407`). I am very happy to help out, and I can also add new features to the mod api if you need them.
 
+There is also a documentation of all classes available which can be helpful: https://docs.yorg3.io
+
 
 ### Testing your own mod
 
