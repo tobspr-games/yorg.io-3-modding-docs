@@ -26,7 +26,7 @@ Since I manually publish all mods (See below), you can not directly test your mo
 2. Open a terminal shell in the folder your mod is located in (It needs to be called `mod.js`)
 3. Run `python mod_testing_server.py` (The script is located in this repository)
 4. Ensure with a browser that you can reach `http://localhost:8000/mod.js`
-5. Visit https://beta.yorg3.io/xdev_modDeveloper=1
+5. Visit https://beta.yorg3.io/?xdev_modDeveloper=1
 6. There should now be a dummy mod installed, which will load your javascript file.
 7. Make sure to reload the page when doing any changes
 
