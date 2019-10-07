@@ -2,7 +2,6 @@
 
 This documentation is supposed to teach you how to write mods for YORG.io 3.
 
-
 ## Writing Mods
 
 ### Getting started
