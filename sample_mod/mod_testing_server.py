@@ -1,4 +1,4 @@
-from http.server import SimpleHTTPServerHandler
+from http.server import SimpleHTTPRequestHandler
 
 
 class CORSHTTPRequestHandler(SimpleHTTPRequestHandler):
@@ -40,14 +40,14 @@ class CORSHTTPRequestHandler(SimpleHTTPRequestHandler):
 
 if __name__ == "__main__":
     import os
-    import SocketServer
+    import socketserver
 
     PORT = 8000
     Handler = CORSHTTPRequestHandler
     # For python 3
     #Handler = SimpleHTTPRequestHandler
 
-    httpd = SocketServer.TCPServer(("", PORT), Handler)
+    httpd = socketserver.TCPServer(("", PORT), Handler)
 
-    print("serving at port: ", str(PORT))
+    print("serving at port", str(PORT))
     httpd.serve_forever()
