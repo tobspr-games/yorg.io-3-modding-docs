@@ -22,7 +22,7 @@ There is also a documentation of all classes available which can be helpful: htt
 
 Since I manually publish all mods (See below), you can not directly test your mod. However, I have added some helper script which makes it possible to test local mods:
 
-1. Install python 2.7 (Python 3 will not work, at least not if you don't modify the script)
+1. Install python 3.7 or higher
 2. Open a terminal shell in the folder your mod is located in (It needs to be called `mod.js`)
 3. Run `python mod_testing_server.py` (The script is located in this repository)
 4. Ensure with a browser that you can reach `http://localhost:8000/mod.js`
