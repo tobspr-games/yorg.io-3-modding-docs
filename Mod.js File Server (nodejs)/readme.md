@@ -1,4 +1,4 @@
-- YOU NEED NODE.JS (https://nodejs.org/en/) -
+[b]YOU NEED NODE.JS (https://nodejs.org/en/)[/b]
 
 This is a mod hoster in node js for Yorg 3 Beta.
 Your mod should be accessible here : http://localhost:8000/mod.js
