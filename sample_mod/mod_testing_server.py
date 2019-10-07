@@ -1,7 +1,7 @@
-import SimpleHTTPServer
+from http.server import SimpleHTTPServerHandler
 
 
-class CORSHTTPRequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
+class CORSHTTPRequestHandler(SimpleHTTPRequestHandler):
     def send_head(self):
         path = self.translate_path(self.path)
         f = None
@@ -45,7 +45,7 @@ if __name__ == "__main__":
     PORT = 8000
     Handler = CORSHTTPRequestHandler
     # For python 3
-    #Handler = SimpleHTTPServer.SimpleHTTPRequestHandler
+    #Handler = SimpleHTTPRequestHandler
 
     httpd = SocketServer.TCPServer(("", PORT), Handler)
 
