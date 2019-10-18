@@ -24,7 +24,7 @@ Since I manually publish all mods (See below), you can not directly test your mo
 
 1. Install node.js, or alternatively python 3.7 or higher
 2. Open a terminal shell in the folder your mod is located in (It needs to be called `mod.js`)
-3. Run `node mod_testing_server.js` (The script is located in this repository). If you installed python run `python mode_testing_server.py`
+3. Run `node mod_testing_server.js` (The script is located in this repository). If you installed python run `python mod_testing_server.py`
 4. Ensure with a browser that you can reach `http://localhost:8000/mod.js`
 5. Visit https://beta.yorg3.io/?xdev_modDeveloper=1
 6. There should now be a dummy mod installed, which will load your javascript file.
